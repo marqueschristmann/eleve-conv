@@ -438,7 +438,7 @@ const App: React.FC = () => {
               &copy; {new Date().getFullYear()} EleveConv Tecnologia. Todos os
               direitos reservados.
             </p>
-            <p>Desenvolvido para o futuro da MarquesChristmann.</p>
+            <p>Desenvolvido por MarquesChristmann.</p>
           </div>
         </div>
       </footer>
