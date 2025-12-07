@@ -238,15 +238,6 @@ const App: React.FC = () => {
                   Baixar Resolução em PDF
                 </a>
               </h2>
-
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Não corra riscos. A <b>Eleve</b>
-                <b className="text-brand-600">Conv</b> foi desenvolvido por
-                especialistas em gestão pública para garantir que cada etapa da
-                destinação e execução das emendas siga rigorosamente a
-                legislação vigente.
-              </p>
-
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Não corra riscos. A <b>Eleve</b>
                 <b className="text-brand-600">Conv</b> foi desenvolvido por
