@@ -215,17 +215,38 @@ const App: React.FC = () => {
             <div className="lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                 Adequação Completa às <br />
-                <span className="text-brand-600 mb-4 mt-2">
-                  Novas Resoluções - TSE
+                {/* Resolução STF */}
+                <span className="text-brand-600 block mt-4 mb-2">
+                  Novas Resoluções - STF
                 </span>
                 <a
-                  href="/PDF/Resolução-TSE-Ministro-Flavio-Dino.pdf"
+                  href="/PDF/Resolução-ADPF-854-STF-FLAVIO DINO.pdf"
                   download
-                  className="inline-block px-5 py-2 mt-4 rounded-md bg-brand-600 text-white font-medium hover:bg-brand-700 transition"
+                  className="inline-block px-5 py-2 rounded-md bg-brand-600 text-white font-medium hover:bg-brand-700 transition"
+                >
+                  Baixar Resolução em PDF
+                </a>
+                {/* Resolução TCE */}
+                <span className="text-brand-600 block mt-6 mb-2">
+                  Novas Resoluções - TCE - RN
+                </span>
+                <a
+                  href="/PDF/RESOLUÇÃO-DO-TCE-RN-26-1-2025-CONVENIOS.pdf"
+                  download
+                  className="inline-block px-5 py-2 rounded-md bg-brand-600 text-white font-medium hover:bg-brand-700 transition"
                 >
                   Baixar Resolução em PDF
                 </a>
               </h2>
+
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Não corra riscos. A <b>Eleve</b>
+                <b className="text-brand-600">Conv</b> foi desenvolvido por
+                especialistas em gestão pública para garantir que cada etapa da
+                destinação e execução das emendas siga rigorosamente a
+                legislação vigente.
+              </p>
+
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Não corra riscos. A <b>Eleve</b>
                 <b className="text-brand-600">Conv</b> foi desenvolvido por
@@ -382,6 +403,76 @@ const App: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="lg:w-1/2 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+              <form
+                className="space-y-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+
+                  const nome = e.target.nome.value;
+                  const orgao = e.target.orgao.value;
+                  const email = e.target.email.value;
+
+                  const assunto = encodeURIComponent("Solicitação de Contato");
+                  const corpo = encodeURIComponent(
+                    `Nome: ${nome}\nÓrgão/Gabinete: ${orgao}\nEmail: ${email}`
+                  );
+
+                  window.location.href = `mailto:actrealiza@gmail.com?subject=${assunto}&body=${corpo}`;
+                }}
+              >
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Nome Completo
+                  </label>
+                  <input
+                    type="text"
+                    name="nome"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                    placeholder="Seu nome"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Órgão / Gabinete
+                  </label>
+                  <input
+                    type="text"
+                    name="orgao"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                    placeholder="Ex: Câmara Municipal de..."
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                    Email Corporativo
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all"
+                    placeholder="seu@email.com"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg hover:shadow-xl mt-2"
+                >
+                  Solicitar Contato
+                </button>
+
+                <p className="text-xs text-center text-slate-400 mt-4">
+                  Seus dados estão seguros. Entraremos em contato em até 2 horas
+                  úteis.
+                </p>
+              </form>
             </div>
           </div>
         </div>
