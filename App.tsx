@@ -55,7 +55,7 @@ const App: React.FC = () => {
                 isScrolled ? "text-slate-900" : "text-slate-900 lg:text-white"
               }`}
             >
-              Eleve<span className="text-brand-500">Conv</span>
+              Eleve<span className="text-brand-500">EP</span>
             </span>
           </div>
 
